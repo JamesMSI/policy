@@ -1,0 +1,42 @@
+name: manage-azure-policy-eb94e851
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - 'initiatives/NIST_SP_800-53_R4_cf25b9c1-bd23-4eb6-bd2c-f4f3ac644a5f/**'
+#      - 'initiatives/_Preview_NIST_SP_800-171_R2_03055927-78bd-4236-86c0-f36125a10dc9/**'
+#      - 'initiatives/CIS_Microsoft_Azure_Foundations_Benchmark_v1.1.0_1a5bb27d-173f-493e-9568-eb56638dde4d/**'
+#      - 'initiatives/Azure_Security_Benchmark_1f3afdf9-d0c9-4c3d-847f-89da613e70a8/**'
+#      - 'initiatives/_Preview_CIS_Microsoft_Azure_Foundations_Benchmark_v1.3.0_612b5213-9160-4969-8578-1518bd2a000c/**'
+#      - 'initiatives/ISO_27001_2013_89c6cddc-1c73-4ac1-b19c-54d1a15a42f2/**'
+#      - .github/workflows/manage-azure-policy-eb94e851.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_eb94e851}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          initiatives/NIST_SP_800-53_R4_cf25b9c1-bd23-4eb6-bd2c-f4f3ac644a5f/**
+          initiatives/_Preview_NIST_SP_800-171_R2_03055927-78bd-4236-86c0-f36125a10dc9/**
+          initiatives/CIS_Microsoft_Azure_Foundations_Benchmark_v1.1.0_1a5bb27d-173f-493e-9568-eb56638dde4d/**
+          initiatives/Azure_Security_Benchmark_1f3afdf9-d0c9-4c3d-847f-89da613e70a8/**
+          initiatives/_Preview_CIS_Microsoft_Azure_Foundations_Benchmark_v1.3.0_612b5213-9160-4969-8578-1518bd2a000c/**
+          initiatives/ISO_27001_2013_89c6cddc-1c73-4ac1-b19c-54d1a15a42f2/**

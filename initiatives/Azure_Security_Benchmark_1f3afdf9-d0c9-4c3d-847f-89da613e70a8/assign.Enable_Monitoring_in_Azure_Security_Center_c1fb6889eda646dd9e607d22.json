@@ -1,0 +1,26 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Enable Monitoring in Azure Security Center",
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8",
+  "scope": "/subscriptions/4de6440b-f7c7-4d94-beff-5ebd0b9b9590",
+  "notScopes": [],
+  "parameters": {},
+  "description": "",
+  "metadata": {
+   "assignedBy": "James Hadden",
+   "parameterScopes": {},
+   "createdBy": "179a8607-607a-4152-9af5-75e916a7a5d9",
+   "createdOn": "2020-12-09T19:53:18.8644805Z",
+   "updatedBy": "179a8607-607a-4152-9af5-75e916a7a5d9",
+   "updatedOn": "2021-01-28T15:21:07.3842747Z"
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/4de6440b-f7c7-4d94-beff-5ebd0b9b9590/providers/Microsoft.Authorization/policyAssignments/c1fb6889eda646dd9e607d22",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "c1fb6889eda646dd9e607d22"
+}
